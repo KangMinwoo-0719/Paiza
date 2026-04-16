@@ -71,7 +71,7 @@ me[1] -= 1
 switch = input()
 
 # 입력받은 행, 열 크기의 2차원 array 생성
-array = [[0 for col in range(h)]for row in range(w)]
+array = [[0 for col in range(w)]for row in range(h)]
 
 # 세로 행 크기만큼 반복:
 for i in range(h):
@@ -80,9 +80,13 @@ for i in range(h):
     chocolate = list(map(int, input().split()))
 
     # 입력받은 값 각 행렬에 넣기
-    for j in range(h):
+    for j in range(w):
         array[i][j] = chocolate[j]
 
+for i in array:
+    for j in i:
+        print(j, end = "")
+    print()
 
 # 입력받은 문자열 하나씩 쪼개기:
 for key in switch:
